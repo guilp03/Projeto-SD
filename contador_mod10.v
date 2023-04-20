@@ -1,22 +1,36 @@
 module Contador_mod10 (
-    input clk,
-    input reset, 
-    input enable,
-    output reg [3:0] count 
+    input data[3:0];
+    input clk, load, enable, clear;
+    output reg [3:0] count;
+    output reg count_end;
 );
 
-always @(posedge clk) begin
-    if (reset) begin 
-        count <= 4'b0;
-    end else begin
-        if (enable) begin
-            if (count == 4'd9) begin
-                count <= 4'd0;
-            end else begin
-                count <= count + 4'd1;
-            end
-        end
-    end
+always @(negedge clear)
+begin
+ count = 4'b0;
 end
 
+if (count == 1'b0) begin
+    count_end = 1'b1;
+end else begin
+    count_end = 1'b0;
+    end
+
+
+always @(posedge clk) begin
+    if(enable)
+    case(count)
+    4'b0: begin
+        count <= 4'b9;
+    end
+    default: count <= count - 4'b1;
+    endcase
+
+    else begin
+
+
+      if(!load)
+        count <= data;
+    end
+end
 endmodule
