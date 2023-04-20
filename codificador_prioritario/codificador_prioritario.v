@@ -1,4 +1,4 @@
-module codificador_p(entrada, enablen, BCD);
+module codificador_prioritario(entrada, enablen, BCD);
 input wire [9:0]entrada, enablen;
 output reg[3:0]BCD;
 
