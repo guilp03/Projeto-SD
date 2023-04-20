@@ -1,5 +1,6 @@
 module codificador_prioritario(entrada, enablen, BCD);
-input wire [9:0]entrada, enablen;
+input wire [9:0]entrada;
+input wire enablen;
 output reg[3:0]BCD;
 
 always@(entrada)
