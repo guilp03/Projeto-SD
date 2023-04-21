@@ -5,11 +5,12 @@ module contador_mod10t;
  	reg [3:0] data; 
   	reg clk, load, en, clearn;
   	wire [3:0] count; 
-    wire count_endTB;
+    wire count_end;
+    wire tc;
   	integer i;
   
 
-  	contador_mod10 dut(data, clk, load, en, clearn, count, count_endTB);
+  	contador_mod10 dut(data, clk, load, en, clearn, count, count_end, tc);
 
 	initial
 		begin

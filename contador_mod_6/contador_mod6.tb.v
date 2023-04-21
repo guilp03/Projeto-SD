@@ -3,14 +3,14 @@
 module contador_mod6_teste;
 
     reg [3:0] data; 
-  	reg loadn, clearn, clk, en;
+  	reg clk, loadn, en, clearn;
   	wire [3:0] tens; 
-  	wire tc;
     wire zero;
+    wire tc;
   	integer i;
   
 
-  	contador_mod_6 dut(data, loadn, clearn, clk, en, tens, tc, zero);
+  	contador_mod_6 dut(data, clk, loadn, en, clearn, tens, tc, zero);
 
 	initial
 		begin
