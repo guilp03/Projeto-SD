@@ -1,27 +1,26 @@
 `timescale 1ns/1ns
-`include "mux.v"
 
-module mux_teste;
+module test_mux;
 
-    reg sel_TB, saida_contador_TB, clk_TB;
-  	wire  Q_TB;
+    reg sel, saida_atraso, hz_clock;
+  	wire  Q;
 
-  	mux DUT(.sel(sel_TB), .saida_contador(saida_contador_TB), .Hz(clk_TB), .Q(Q_TB));
+  	mux DUT(sel, saida_atraso, hz_clock, Q);
 
     initial
         begin
 
-            $dumpfile("mux_teste.vcd");
-            $dumpvars(0, mux_teste);
+            $dumpfile("test_mux.vcd");
+            $dumpvars(0, test_mux);
 
-                sel_TB=1; saida_contador_TB=0; clk_TB=1;
-            #5  sel_TB=0; saida_contador_TB=0; clk_TB=1;
-         	  #5  sel_TB=1; saida_contador_TB=1; clk_TB=0;
-          	#5  sel_TB=0; saida_contador_TB=1; clk_TB=0;
-            #5  sel_TB=1; saida_contador_TB=1; clk_TB=1;
-          	#5  sel_TB=0; saida_contador_TB=1; clk_TB=1;
-            #5  sel_TB=1; saida_contador_TB=0; clk_TB=0;
-          	#5  sel_TB=0; saida_contador_TB=0; clk_TB=0;
+                sel=1; saida_atraso=0; hz_clock=1;
+            #5  sel=0; saida_atraso=0; hz_clock=1;
+         	  #5  sel=1; saida_atraso=1; hz_clock=0;
+          	#5  sel=0; saida_atraso=1; hz_clock=0;
+            #5  sel=1; saida_atraso=1; hz_clock=1;
+          	#5  sel=0; saida_atraso=1; hz_clock=1;
+            #5  sel=1; saida_atraso=0; hz_clock=0;
+          	#5  sel=0; saida_atraso=0; hz_clock=0;
           
         end
 endmodule

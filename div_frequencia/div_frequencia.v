@@ -1,7 +1,7 @@
-module divi(input clk,
-            output reg clk100);
+module divisor(input clk,
+            output reg clkf);
   reg [5:0] a = 6'b000000;
-  initial clk100 = 1'b0;
+  initial clkf = 1'b0;
   
   always@(posedge clk)
     begin
@@ -10,7 +10,7 @@ module divi(input clk,
       if(a >= 50)
         begin
           a = 6'b000000;
-          clk100 = ~clk100;
+          clkf = ~clkf;
         end
     end
 endmodule

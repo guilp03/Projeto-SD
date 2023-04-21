@@ -1,0 +1,54 @@
+$date
+	Fri Apr 21 15:17:32 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module test_mux $end
+$var wire 1 ! Q $end
+$var reg 1 " hz_clock $end
+$var reg 1 # saida_atraso $end
+$var reg 1 $ sel $end
+$scope module DUT $end
+$var wire 1 " hz_clock $end
+$var wire 1 # saida_atraso $end
+$var wire 1 $ sel $end
+$var reg 1 ! Q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1$
+0#
+1"
+1!
+$end
+#5
+0!
+0$
+#10
+0"
+1#
+1$
+#15
+1!
+0$
+#20
+1"
+1$
+#25
+0$
+#30
+0!
+0"
+0#
+1$
+#35
+0$

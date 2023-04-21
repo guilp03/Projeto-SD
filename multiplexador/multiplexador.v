@@ -1,8 +1,8 @@
-module mux(input wire enablen, saida_atraso, hz_clock,
+module mux(input wire sel, saida_atraso, hz_clock,
                 output reg Q);
 
     always@*
-    if(enablen == 0)
+    if(sel == 0)
         begin
             Q = saida_atraso;
         end
