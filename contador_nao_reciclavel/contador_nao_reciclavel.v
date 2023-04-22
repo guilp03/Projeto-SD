@@ -1,28 +1,21 @@
-module contador_nao_reciclavel(
-    input clk,
-    input reset,
-    input botao,
-    output reg [2:0] saida
-);
+module counter(input wire clock, reset,output reg Q);
 
-reg [2:0] valor_atual, valor_anterior;
-
-// Implementação do atraso de trepidação
-always @(posedge clk) begin
-    if (reset) begin
-        valor_atual <= 3'b000;
-        valor_anterior <= 3'b000;
-    end else begin
-        valor_anterior <= valor_atual;
-        valor_atual <= {valor_anterior[1:0], botao};
-        if (valor_atual == 3'b111 && valor_anterior != 3'b111) begin
-            if (saida < 3'b111) begin
-                saida <= saida + 1;
-            end else begin
-                saida <= 3'b000;
+    reg [2:0] contador;
+    always@(posedge clock or posedge reset)
+    begin    
+        if(reset)
+            begin
+                contador = 3'b000;
+                Q = 0;
             end
-        end
+        else if (contador == 3'b011)
+            begin
+                Q = 1;
+                contador = contador + 1'b1;
+            end
+        else if (contador < 3'b111)
+            begin
+                contador = contador + 1'b1;
+            end
     end
-end
-
 endmodule

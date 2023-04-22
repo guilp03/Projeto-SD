@@ -1,5 +1,5 @@
-`include "timer_nivel2/contador_mod10/contador_mod10.v"
-`include "timer_nivel2/contador_mod6/contador_mod_6.v"
+`include "./contador_mod10/contador_mod10.v"
+`include "./contador_mod6/contador_mod_6.v"
 `timescale 1ns/1ns
 
 module timer_nivel2(
