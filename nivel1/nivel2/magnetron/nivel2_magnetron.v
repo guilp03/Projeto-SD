@@ -1,5 +1,5 @@
-`include "./latch_sr/latch_sr.v"
-`include "./bloco_logico/bloco_logico.v"
+`include "./nivel3/latch_sr/latch_sr.v"
+`include "./nivel3/bloco_logico/bloco_logico.v"
 
 module startn(stopn, clearn, door_closed, timer_done, mag_on);
   input wire startn, stopn, clearn, door_closed, timer_done;
@@ -10,5 +10,4 @@ module startn(stopn, clearn, door_closed, timer_done, mag_on);
 
   bloco_logico controle(startn, stopn, clearn, door_closed, timer_done, set, reset);
   latch_sr latch_sr(set, reset, mag_on);
-
 endmodule
