@@ -1,5 +1,5 @@
-`include "nivel_3/latch_sr/latch_sr.v"
-`include "nivel_3/bloco_logico/bloco_logico.v"
+`include "./latch_sr/latch_sr.v"
+`include "./bloco_logico/bloco_logico.v"
 
 module startn(stopn, clearn, door_closed, timer_done, mag_on);
   input wire startn, stopn, clearn, door_closed, timer_done;
