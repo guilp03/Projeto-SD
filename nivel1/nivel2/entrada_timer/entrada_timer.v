@@ -3,26 +3,26 @@
 `include "./nivel3/contador_nao_reciclado/contador_nao_reciclavel.v"
 `include "./nivel3/mux/mux.v"
 
-module timer_controle(keypad, enablen, clk100, D, loadn, pgt_1Hz);
-        input wire [9:0] keypad;
+module timer_controle(key, enablen, clk100, D, loadn, pgt_1Hz);
+        input wire [9:0] key;
         input wire enablen, clk100;
         output wire [3:0] D;
         output wire loadn, pgt_1Hz;
 
         wire clkf, Q;
-        reg keypad_on;
-        initial keypad_on = 0;
+        reg key_on;
+        initial key_on = 0;
 
-        always@(keypad)begin
-                if(keypad == 10'b0000000000)
-                        keypad_on = 1'b0;
+        always@(key)begin
+                if(key == 10'b0000000000)
+                        key_on = 1'b0;
                 else
-                        keypad_on = 1'b1;
+                        key_on = 1'b1;
         end
 
-        assign loadn = ~keypad_on;
+        assign loadn = ~key_on;
 
-        codificador_prioritario BL0(keypad, enablen, D);
+        codificador_prioritario BL0(key, enablen, D);
         divisor BL1(clk100,clkf);
         counter BL2(clk100, loadn, Q);
         mux BL3(enablen, Q, clkf, pgt_1Hz);
