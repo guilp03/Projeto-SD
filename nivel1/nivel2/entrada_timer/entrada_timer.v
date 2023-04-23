@@ -5,7 +5,7 @@
 
 module timer_controle(keypad, enablen, clk100, D, loadn, pgt_1Hz);
         input wire [9:0] keypad;
-        input wire enablen clk100;
+        input wire enablen, clk100;
         output wire [3:0] D;
         output wire loadn, pgt_1Hz;
 
@@ -15,12 +15,12 @@ module timer_controle(keypad, enablen, clk100, D, loadn, pgt_1Hz);
 
         always@(keypad)begin
                 if(keypad == 10'b0000000000)
-                        keypad_on = 1'b0;            
-                else 
+                        keypad_on = 1'b0;
+                else
                         keypad_on = 1'b1;
         end
 
-        assign loadn = ~keypad_on
+        assign loadn = ~keypad_on;
 
         codificador_prioritario codificador_prioritario(keypad, enablen, D);
         div_frequencia divisor(clk100,clkf);
