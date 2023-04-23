@@ -3,12 +3,12 @@
 `include "./nivel2/magnetron/nivel2_magnetron.v"
 `include "./nivel2/decoder_7seg/decoder_7seg.v"
 
-module microwaves(keypad, clk, startn, stopn, clearn, door_closed,
+module microwave(keypad, clk, startn, stopn, clearn, door_closed,
                   secs_ones_segs, secs_tens_segs, min_segs, mag_on)
 
                 input wire [9:0] keypad;
                 input wire clk, startn, stopn, clearn, door_closed;
-                output reg [6:0] blank_digit, secs_ones_segs, secs_tens_segs, min_segs;
+                output reg [6:0] secs_ones_segs, secs_tens_segs, min_segs;
                 output wire mag_on;
                 
                 wire enablen, pgt_1Hz, loadn, zero, timer_done;
