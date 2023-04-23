@@ -3,14 +3,13 @@
 module test_control_nvl2;
 
     reg startn, stopn, clearn, door_closed, timer_done;
-  	wire  Q;
-
-  	nivel2_controle dut(startn, stopn, clearn, door_closed, timer_done, Q);
+  	wire  mag_on;
+  	nvl2_controle dut(startn, stopn, clearn, door_closed, timer_done, mag_on);
 
     initial
         begin
 
-            $dumpfile("test_control.vcd");
+            $dumpfile("teste_magnetron_nvl2.vcd");
             $dumpvars(0, test_control_nvl2);
 
                 startn=1; stopn=0; clearn=0; door_closed=0; timer_done=0;

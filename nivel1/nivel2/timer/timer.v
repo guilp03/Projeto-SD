@@ -6,7 +6,7 @@ module timer_nivel2(
     input [3:0] data,
     input wire enable, clk, load, clearn,
     output wire zero,
-    output wire [3:0] so, st, reg min
+    output wire [3:0] so, st, min
 );
 
     wire t1, t2, t3, ze1, ze2, ze3;

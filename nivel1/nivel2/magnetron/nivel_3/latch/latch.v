@@ -1,10 +1,10 @@
 module latch_sr(input S, input R, 
-                input clk, output reg Q);
+                output reg Q);
 
-always @(posedge clk) begin
+always@*
     if (S && !R) //Set
         Q <= 1'b1;
     else if (R && !S) //Reset
         Q <= 1'b0;
-end
+
 endmodule
