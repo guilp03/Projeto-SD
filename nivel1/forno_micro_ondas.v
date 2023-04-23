@@ -4,7 +4,7 @@
 `include "./nivel_2/decoder/decoder_7seg.v"
 
 module microwave(keypad, clk, startn, stopn, clearn, door_closed,
-                  secs_ones_segs, secs_tens_segs, min_segs, mag_on)
+                 secs_ones_segs, secs_tens_segs, min_segs, mag_on);
 
                 input wire [9:0] keypad;
                 input wire clk, startn, stopn, clearn, door_closed;
