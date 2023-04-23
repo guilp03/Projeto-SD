@@ -15,8 +15,8 @@ module timer_controle(keypad, enablen, clk100, D, loadn, pgt_1Hz);
 
         always@(keypad)begin
                 if(keypad == 10'b0000000000)
-                        keypad_on = 1'b0;            
-                else 
+                        keypad_on = 1'b0;
+                else
                         keypad_on = 1'b1;
         end
 
