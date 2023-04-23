@@ -5,7 +5,7 @@ module test_control_nvl2;
     reg startn, stopn, clearn, door_closed, timer_done;
   	wire  Q;
 
-  	nivel2_controle dut(startn, stopn, clearn, door_closed, timer_done, Q);
+  	nvl2_controle dut(startn, stopn, clearn, door_closed, timer_done, Q);
 
     initial
         begin

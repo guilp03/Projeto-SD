@@ -1,7 +1,7 @@
-`include "./nivel3/latch_sr/latch_sr.v"
+`include "./nivel3/latch_sr/latchsr.v"
 `include "./nivel3/bloco_logico/bloco_logico.v"
 
-module startn(stopn, clearn, door_closed, timer_done, mag_on);
+module nvl2_controle(stopn, clearn, door_closed, timer_done, mag_on);
   input wire startn, stopn, clearn, door_closed, timer_done;
   output wire mag_on;
 
