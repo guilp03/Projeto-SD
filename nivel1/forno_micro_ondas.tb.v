@@ -2,11 +2,7 @@
 
 module teste_micro_ondas;
     reg [9:0] keypad;
-    reg clk;
-    reg startn;
-    reg stopn;
-    reg clearn;
-    reg door_closed;
+    reg clk, startn, stopn, clearn, door_closed;
 
     wire [6:0] secs_ones_segs, secs_tens_segs, min_segs;
     wire mag_on;
