@@ -1,7 +1,7 @@
-`include "./nivel2/entrada_timer/entrada_timer.v"
-`include "./nivel2/timer/timer.v"
-`include "./nivel2/magnetron/nivel2_magnetron.v"
-`include "./nivel2/decoder_7seg/decoder_7seg.v"
+`include "./nivel2/timer_e_controle/entrada_timer.v"
+`include "./nivel2/minutos_segundos/timer.v"
+`include "./nivel2/controle_magnetron/nivel2_magnetron.v"
+`include "./nivel2/decoder/decoder_7seg.v"
 
 module microwave(keypad, clk, startn, stopn, clearn, door_closed,
                   secs_ones_segs, secs_tens_segs, min_segs, mag_on)
