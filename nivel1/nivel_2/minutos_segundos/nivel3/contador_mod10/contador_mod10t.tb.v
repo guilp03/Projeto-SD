@@ -1,21 +1,21 @@
 `timescale 1ns/1ps
 
-module contador_mod10t;
+module contador_mod10_teste;
 
  	reg [3:0] data; 
   	reg clk, load, en, clearn;
   	wire [3:0] count; 
-    wire count_end;
-    wire tc;
+  	wire tc;
+    wire count_endTB;
   	integer i;
   
 
-  	contador_mod10 dut(data, clk, load, en, clearn, count, count_end, tc);
+  	contador_mod10 dut(data, clk, load, en, clearn, count, tc, count_endTB);
 
 	initial
 		begin
 		
-			$dumpfile("contador_mod10.vcd");
+			$dumpfile("contador_mod10_teste.vcd");
 			$dumpvars(0, contador_mod10t);
           
       assign load = 1;
