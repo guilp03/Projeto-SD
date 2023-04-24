@@ -1,5 +1,5 @@
 $date
-	Sun Apr 23 10:48:35 2023
+	Sun Apr 23 17:46:08 2023
 $end
 $version
 	Icarus Verilog
@@ -13,17 +13,17 @@ $var wire 1 " loadn $end
 $var wire 4 # D [3:0] $end
 $var reg 1 $ clk100 $end
 $var reg 1 % enablen $end
-$var reg 10 & keypad [9:0] $end
+$var reg 10 & key [9:0] $end
 $scope module dut $end
 $var wire 1 $ clk100 $end
 $var wire 1 % enablen $end
-$var wire 10 ' keypad [9:0] $end
+$var wire 10 ' key [9:0] $end
 $var wire 1 " loadn $end
 $var wire 1 ! pgt_1Hz $end
 $var wire 1 ( clkf $end
 $var wire 1 ) Q $end
 $var wire 4 * D [3:0] $end
-$var reg 1 + keypad_on $end
+$var reg 1 + key_on $end
 $scope module BL0 $end
 $var wire 1 % enablen $end
 $var wire 10 , entrada [9:0] $end
