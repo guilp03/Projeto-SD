@@ -1,6 +1,6 @@
 module decoder(min, dSec, sec, minOut, dsecOut, secOut);
     input wire [3:0] min, dSec, sec;
-    output reg [6:0] minOut, dsecOut, secOut;
+    output wire [6:0] minOut, dsecOut, secOut;
 
   always@(min)
     case(min)
