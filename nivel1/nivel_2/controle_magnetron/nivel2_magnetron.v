@@ -1,5 +1,5 @@
-`include "./nivel_3/latch/latch.v"
-`include "./nivel_3/bloco_logico/bloco_logico.v"
+`include "./nivel_2/controle_magnetron/nivel_3/latch/latch.v"
+`include "./nivel_2/controle_magnetron/nivel_3/bloco_logico/bloco_logico.v"
 
 module nvl2_controle(startn, stopn, clearn, door_closed, timer_done, mag_on);
   input wire startn, stopn, clearn, door_closed, timer_done;
