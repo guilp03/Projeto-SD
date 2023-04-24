@@ -1,20 +1,21 @@
-`include "./nivel_2/decoder/decoder_7seg.v"
 `include "./nivel_2/timer_e_controle/entrada_timer.v"
 `include "./nivel_2/minutos_segundos/timer.v"
 `include "./nivel_2/controle_magnetron/nivel2_magnetron.v"
+`include "./nivel_2/decoder/decoder_7seg.v"
 
 module microwave(keypad, clk, startn, stopn, clearn, door_closed,
-                  secs_ones_segs, secs_tens_segs, min_segs, mag_on);
+                 secs_ones_segs, secs_tens_segs, min_segs, mag_on);
 
                 input wire [9:0] keypad;
                 input wire clk, startn, stopn, clearn, door_closed;
-                output wire [6:0] secs_ones_segs, secs_tens_segs, min_segs;
+                output reg [6:0] secs_ones_segs, secs_tens_segs, min_segs;
                 output wire mag_on;
                 
                 wire enablen, pgt_1Hz, loadn, zero, timer_done;
                 wire [3:0] D;
                 wire [3:0] sec_ones, sec_tens, mins;
 
+                initial enablen = 1'b1;
                 assign mag_on = enablen;
 
                 // ENTRADA DE TEMPO E CONTROLE
