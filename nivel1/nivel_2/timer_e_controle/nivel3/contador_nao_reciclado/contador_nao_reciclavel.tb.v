@@ -17,7 +17,7 @@ module test_contador;
             #5   contador = 3;
             #5   clear = 0; 
           
-            repeat(8)
+            repeat(16)
                 begin
                     #10 clock = ~clock;
                 end
