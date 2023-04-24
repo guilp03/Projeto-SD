@@ -15,6 +15,7 @@ module microwave(keypad, clk, startn, stopn, clearn, door_closed,
                 wire [3:0] D;
                 wire [3:0] sec_ones, sec_tens, mins;
 
+                initial enablen = 1'b1;
                 assign mag_on = enablen;
 
                 // ENTRADA DE TEMPO E CONTROLE
