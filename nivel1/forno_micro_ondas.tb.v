@@ -1,22 +1,25 @@
 `timescale 1ms/1ms
 
-module teste_micro_ondas;
+module nivel1_test;
     reg [9:0] keypad;
-    reg clk, startn, stopn, clearn, door_closed;
+    reg clk;
+    reg startn;
+    reg stopn;
+    reg door_closed;
+    reg clearn;
 
     wire [6:0] secs_ones_segs, secs_tens_segs, min_segs;
     wire mag_on;
 
-    microwave dut(keypad, clk, startn, stopn, clearn, door_closed,
-                  secs_ones_segs, secs_tens_segs, min_segs, mag_on);
+    microwave dut(.startn(startn), .stopn(stopn), .door_closed(door_closed), .clearn(clearn), .keypad(keypad), .clk(clk), .secs_ones_segs(secs_ones_segs), .secs_tens_segs(secs_tens_segs), .min_segs(min_segs), .mag_on(mag_on));
 
     initial clk = 0;
 
     always #5 clk = ~clk;
 
     initial begin
-        $dumpfile("test_microwave.vcd");
-        $dumpvars(0, teste_micro_ondas);
+        $dumpfile("nivel1.vcd");
+        $dumpvars(0, nivel1_test);
     end
 
     initial begin
