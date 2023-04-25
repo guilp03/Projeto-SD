@@ -1,4 +1,4 @@
-`timescale 1ms/1ms
+`timescale 1us/1us
 
 module nivel1_test;
     reg [9:0] keypad;
@@ -51,15 +51,15 @@ module nivel1_test;
             #1100;
             keypad = 9'b000000000;
 
-            // Digitando o 9
+            // Digitando o 0
             #1100;
-            keypad = 10'b1000000000;
+            keypad = 10'b0000000001;
             #1100;
             keypad = 9'b000000000;
 
-            // Digitando o 9
+            // Digitando o 0
             #1100;
-            keypad = 10'b1000000000;
+            keypad = 10'b0000000001;
             #1100;
             keypad = 9'b000000000;
 
