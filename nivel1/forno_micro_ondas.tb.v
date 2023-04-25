@@ -18,7 +18,7 @@ module nivel1_test;
     always #5 clk = ~clk;
 
     initial begin
-        $dumpfile("nivel1.vcd");
+        $dumpfile("microwave.vcd");
         $dumpvars(0, nivel1_test);
     end
 
