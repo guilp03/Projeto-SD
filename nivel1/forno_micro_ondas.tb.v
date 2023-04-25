@@ -2,7 +2,7 @@
 
 module nivel1_test;
     reg [9:0] keypad;
-    reg clk;
+    reg clock;
     reg startn;
     reg stopn;
     reg door_closed;
@@ -11,11 +11,11 @@ module nivel1_test;
     wire [6:0] secs_ones_segs, secs_tens_segs, min_segs;
     wire mag_on;
 
-    microwave dut(.startn(startn), .stopn(stopn), .door_closed(door_closed), .clearn(clearn), .keypad(keypad), .clk(clk), .secs_ones_segs(secs_ones_segs), .secs_tens_segs(secs_tens_segs), .min_segs(min_segs), .mag_on(mag_on));
+    microwave dut(.startn(startn), .stopn(stopn), .door_closed(door_closed), .clearn(clearn), .keypad(keypad), .clock(clock), .secs_ones_segs(secs_ones_segs), .secs_tens_segs(secs_tens_segs), .min_segs(min_segs), .mag_on(mag_on));
 
-    initial clk = 0;
+    initial clock = 0;
 
-    always #5 clk = ~clk;
+    always #5 clock = ~clock;
 
     initial begin
         $dumpfile("microwave.vcd");

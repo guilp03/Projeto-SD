@@ -5,7 +5,7 @@ module test_decoder;
     reg [3:0] min, dSec, sec;
   	wire [6:0] minOut, dsecOut, secOut;
 
-  	decoder dut(min, dSec, sec, minOut, dsecOut, secOut);
+  	decoder DUT(.min(min), .dSec(dSec), .sec(sec), .minOut(minOut), .dsecOut(dsecOut), .secOut(secOut));
 
     initial
         begin

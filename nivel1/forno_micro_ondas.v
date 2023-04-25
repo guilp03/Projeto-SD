@@ -3,29 +3,33 @@
 `include "./nivel_2/controle_magnetron/nivel2_magnetron.v"
 `include "./nivel_2/decoder/decoder_7seg.v"
 
-module microwave(keypad, clk, startn, stopn, clearn, door_closed,
-                 secs_ones_segs, secs_tens_segs, min_segs, mag_on);
+module microwave(
+    input wire [9:0]keypad,
+    input wire clock, startn, stopn, clearn, door_closed,
+    output wire [6:0] min_segs, 
+    output wire [6:0] secs_tens_segs, 
+    output wire [6:0] secs_ones_segs,
+    output wire mag_on);
 
-                input wire [9:0] keypad;
-                input wire clk, startn, stopn, clearn, door_closed;
-                output wire [6:0] secs_ones_segs, secs_tens_segs, min_segs;
-                output wire mag_on;
-                
-                wire enablen, pgt_1Hz, loadn, zero;
-                wire [3:0] D;
-                wire [3:0] sec_ones, sec_tens, mins;
+wire enablen;
+wire [3:0] D;
+wire loadn;
+wire pgt_1Hz;
+wire zero;
 
-                assign mag_on = enablen;
+assign mag_on = enablen;
 
-                // ENTRADA DE TEMPO E CONTROLE
-                timer_controle inst4(keypad, enablen, clk, D, loadn, pgt_1Hz);
-                
-                //CONTADOR DE MINUTOS/SEGUNDOS
-                timer_nivel2 inst3(D, enablen, pgt_1Hz, loadn, clearn, zero, sec_ones, sec_tens, mins);
+wire [3:0] sec_ones, sec_tens, mins; 
 
-                // CONTROLE DE MAGNETRON
-                nvl2_controle inst6(startn, stopn, clearn, door_closed, zero, mag_on);
+timer_controle inst4(keypad, enablen, clock, D, loadn, pgt_1Hz);
 
-                //DECODIFICADORRES/DRIVERS DE 7 SEGMENTOS 
-                decoder inst(mins, sec_tens, sec_ones, min_segs, secs_tens_segs, secs_ones_segs);
+
+timer_nivel2 inst3(D,enablen, pgt_1Hz, loadn, clearn, zero, sec_ones, sec_tens, mins);
+
+
+nvl2_controle inst6(startn, stopn, clearn, door_closed, zero, enablen);
+
+
+decoder inst(mins, sec_tens, sec_ones, min_segs, secs_tens_segs, secs_ones_segs);
+
 endmodule
